@@ -2,6 +2,7 @@ package com.kafka.chat.main;
 
 import com.kafka.chat.consumers.NotificationConsumerGroup;
 import com.kafka.chat.consumers.NotificationConsumerThread;
+import com.kafka.chat.producers.NotificationProducerThread;
 
 public final class MultipleConsumersMain {
 
@@ -9,8 +10,8 @@ public final class MultipleConsumersMain {
 
     String brokers = "localhost:9092";
     String groupId = "group01";
-    String topic = "HelloKafkaTopic1";
-    int numberOfConsumer = 3;
+    String topic = "kafkachat1";
+    int numberOfConsumer = 1;
 
 
     if (args != null && args.length > 4) {
@@ -20,7 +21,7 @@ public final class MultipleConsumersMain {
       numberOfConsumer = Integer.parseInt(args[3]);
     }
 
-    NotificationConsumerThread producerThread = new NotificationConsumerThread(brokers,groupId, topic);
+    NotificationProducerThread producerThread = new NotificationProducerThread(brokers, topic);
     Thread t1 = new Thread(producerThread);
     t1.start();
 
