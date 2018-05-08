@@ -1,0 +1,19 @@
+{
+   "namespace":"com.chat.system",
+   "type":"record",
+   "name":"PersonalMessage",
+   "fields":[
+      {
+         "name":"from",
+         "type":"string"
+      },
+      {
+         "name":"to",
+         "type":"string"
+      },
+      {
+         "name":"message",
+         "type":"string"
+      }
+   ]
+}
