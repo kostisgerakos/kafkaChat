@@ -9,39 +9,31 @@ import java.util.stream.Collectors;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.PartitionInfo;
 
-
-
 public class ListTopicsConsumer {
-	
-	
-	public Set<String> getGroupTopics() {
-		final Properties props = new Properties();
-		//Basic properties values
-		props.put("bootstrap.servers", "localhost:9092");
-		props.put("enable.auto.commit", "false");
-		props.put("group.id", "LocationConsumer2");
+
+	private final String brokers;
+	private final String schema;
+	private final Properties props = new Properties();
+	private final KafkaConsumer<String, String> consumer;
+
+	public ListTopicsConsumer(String brokers, String schema) {
+		this.brokers = brokers;
+		this.schema = schema;
+		props.put("bootstrap.servers", brokers);
+		props.put("group.id", "GroupTopicConsumer");
 		props.put("key.deserializer", "io.confluent.kafka.serializers.KafkaAvroDeserializer");
 		props.put("value.deserializer", "io.confluent.kafka.serializers.KafkaAvroDeserializer");
-		props.put("schema.registry.url", "localhost:8081");
-	
-		//Map<String, List<PartitionInfo>> topics;
-		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
-		//topics = consumer.listTopics();
-		Set<String> topics = consumer.listTopics().keySet()
-                .stream()
-                .filter(s -> s.startsWith("kafka"))
-                .collect(Collectors.toSet());
-	   /*   System.out.println("******************************************");
-	      System.out.println("          L I S T    T O P I C S          ");
-	      System.out.println("******************************************\n");
+		props.put("schema.registry.url", schema);
+		consumer = new KafkaConsumer<String, String>(props);
 
-	      for (Map.Entry<String, List<PartitionInfo>> topic : topics.entrySet()) {
-	         System.out.println("Topic: "+ topic.getKey());
-	         //System.out.println("Value: " + topic.getValue() + "\n");
-	      }
-		*/
+	}
+
+	public Set<String> getGroupTopics() {
+
+		Set<String> topics = consumer.listTopics().keySet().stream().filter(s -> s.startsWith("kafka"))
+				.collect(Collectors.toSet());
 		consumer.close();
 		return topics;
 	}
-
+	
 }

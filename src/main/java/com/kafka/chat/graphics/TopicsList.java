@@ -3,9 +3,6 @@ package com.kafka.chat.graphics;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.swing.*;
@@ -42,17 +39,4 @@ public class TopicsList {
 		frame.setVisible(true);
 	}
 
-	/*public static void main(String[] args) {
-		final int MAX = 10;
-		// initialize list elements
-		// String[] listElems = new String[MAX];
-		ArrayList topics = new ArrayList();
-		for (int i = 0; i < MAX; i++) {
-			// listElems[i] = "element " + i;
-			topics.add("element " + i);
-		}
-		TopicsList topicList = new TopicsList();
-		topicList.start(topics);
-
-	}*/
 }
