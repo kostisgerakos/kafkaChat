@@ -17,12 +17,12 @@ public class ListTopicsConsumer {
 	public Set<String> getGroupTopics() {
 		final Properties props = new Properties();
 		//Basic properties values
-		props.put("bootstrap.servers", "diagoras.di.uoa.gr:9092");
+		props.put("bootstrap.servers", "localhost:9092");
 		props.put("enable.auto.commit", "false");
 		props.put("group.id", "LocationConsumer2");
 		props.put("key.deserializer", "io.confluent.kafka.serializers.KafkaAvroDeserializer");
 		props.put("value.deserializer", "io.confluent.kafka.serializers.KafkaAvroDeserializer");
-		props.put("schema.registry.url", "http://diagoras.di.uoa.gr:8081");
+		props.put("schema.registry.url", "localhost:8081");
 	
 		//Map<String, List<PartitionInfo>> topics;
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
