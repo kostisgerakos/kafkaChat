@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class ChatMain {
 
-	String username = "kostis";
+	String username = "fwkiwn";
 	String topic;
 	JTextField messageBox;
 	JTextArea chatBox;
