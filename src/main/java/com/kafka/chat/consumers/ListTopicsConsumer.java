@@ -1,13 +1,10 @@
 package com.kafka.chat.consumers;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.PartitionInfo;
 
 public class ListTopicsConsumer {
 
@@ -30,7 +27,7 @@ public class ListTopicsConsumer {
 
 	public Set<String> getGroupTopics() {
 
-		Set<String> topics = consumer.listTopics().keySet().stream().filter(s -> s.startsWith("kafka"))
+		Set<String> topics = consumer.listTopics().keySet().stream().filter(s -> s.startsWith("Kafka"))
 				.collect(Collectors.toSet());
 		consumer.close();
 		return topics;

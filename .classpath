@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
+	<classpathentry excluding="com/kafka/chat/graphics/ChatGUI.java|com/kafka/chat/consumers/NotificationConsumerThread.java|com/kafka/chat/consumers/NotificationConsumerGroup.java|com/kafka/chat/main/MultipleConsumersMain.java|com/kafka/chat/producers/NotificationProducerThread.java" kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>

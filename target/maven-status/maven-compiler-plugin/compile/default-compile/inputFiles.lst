@@ -1,5 +1,11 @@
 /home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/producers/NotificationProducerThread.java
 /home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/main/MultipleConsumersMain.java
 /home/kostis/workspace/KafkaChat/src/main/java/com/chat/system/PersonalMessage.java
+/home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/producer/Producer.java
+/home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/consumers/ListTopicsConsumer.java
+/home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/graphics/ChatGUI.java
+/home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/graphics/TopicsList.java
 /home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/consumers/NotificationConsumerThread.java
+/home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/main/StartGroupChat.java
 /home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/consumers/NotificationConsumerGroup.java
+/home/kostis/workspace/KafkaChat/src/main/java/com/kafka/chat/consumers/Consumer.java
